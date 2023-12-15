@@ -11,7 +11,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.3.10",
+    "axios": "^1.6.2",
+    "lodash": "^4.17.21",
+    "swiper": "^8.4.7",
+    "vue": "^3.3.11",
+    "vue-agile": "^2.0.0",
+    "vue-awesome-swiper": "^5.0.1",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
@@ -22,6 +28,7 @@
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
     "prettier": "^3.0.3",
+    "typescript": "^5.3.3",
     "vite": "^5.0.5"
   }
 }
