@@ -54,6 +54,11 @@ const hideDropdown = () => {
 </script>
 
 <style scoped>
+nav {
+    display: flex;
+    justify-content: center;
+}
+
 nav .nav-inner {
     display: flex;
     flex-direction: row;
@@ -62,7 +67,6 @@ nav .nav-inner {
     padding: 1rem;
     background-color: #f0f0f0;
     width: 95%;
-    margin-left: 5%;
 }
 
 .logo img {
