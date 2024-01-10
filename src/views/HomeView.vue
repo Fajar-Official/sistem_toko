@@ -1,18 +1,26 @@
 <template>
   <div>
-    <!-- <CarouselComponent /> -->
+    <CarouselComponent class="carousel" :navigation="false" :pagination="false" :start-auto-play="true" :time-out="2000"
+      v-slot="{ currentSlide }">
+      <SlideCarousel v-show="currentSlide === index + 1" v-for="(slide, index) in carouselSlides" :key="index">
+        <div class="slide-info">
+          <img v-if="imagePaths[slide]" :src="imagePaths[slide]" alt="">
+          <p v-else>Loading...</p>
+        </div>
+      </SlideCarousel>
+    </CarouselComponent>
 
     <section class="featured-section">
-      <h2 class="section-title">Produk Terbaru</h2>
+      <h2 class="section-title">Produk Terbaru </h2>
       <div class="latest-products">
-        <CardComponent v-for="product in latestProducts" :key="product.id" :item="product" />
+        <CardComponent v-for="item in latestProducts" :key="item.id" :item="item" />
       </div>
     </section>
 
     <section class="featured-section">
       <h2 class="section-title">Grid View</h2>
       <div class="grid-view">
-        <CardComponent v-for="item in gridItems" :key="item.id" :item="item" />
+        <CardComponent v-for="item in dataProduct" :key="item.id" :item="item" />
       </div>
     </section>
   </div>
@@ -21,30 +29,68 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
-// import CarouselComponent from '@/components/CarouselComponent.vue';
 import CardComponent from '@/components/CardComponent.vue';
+import CarouselComponent from '@/components/CarouselComponent.vue';
+import SlideCarousel from '@/components/SlideCarousel.vue';
+import { apiUrl } from '@/api/apiUrl';
 
 const latestProducts = ref([]);
-const gridItems = ref([]);
+const dataProduct = ref([]);
+const carouselSlides = ['banner-1', 'banner-2', 'banner-3'];
+
+// Image paths are stored in a reactive variable
+const imagePaths = ref({});
+
+const getImagePath = async (slide) => {
+  try {
+    const imagePath = await import(`@/assets/img/${slide}.jpg`);
+    imagePaths.value = { ...imagePaths.value, [slide]: imagePath.default };
+  } catch (error) {
+    console.error('Error importing image:', error);
+    imagePaths.value = { ...imagePaths.value, [slide]: '' };
+  }
+};
 
 onMounted(async () => {
   try {
-    const apiProduct = 'https://sistemtoko.com/public/demo/product';
+    const apiProduct = apiUrl.product;
     const response = await axios.get(apiProduct);
+
     latestProducts.value = response.data.aaData.slice(0, 3);
-    gridItems.value = response.data.aaData;
+    dataProduct.value = response.data.aaData;
+    console.log(dataProduct.value);
+
+    await Promise.all(carouselSlides.map(async (slide) => {
+      await getImagePath(slide);
+    }));
   } catch (error) {
     console.error('Error fetching product data:', error);
   }
 });
 </script>
-
 <style scoped>
-/* Your existing styles here */
-</style>
+.carousel {
+  position: relative;
+  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 
+  .slide-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
 
-<style scoped>
+    img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 .section-title {
   text-align: center;
   margin-top: 24px;
@@ -61,7 +107,6 @@ onMounted(async () => {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 
 .grid-view {
   display: grid;
