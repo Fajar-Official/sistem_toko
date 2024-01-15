@@ -11,14 +11,15 @@
     </CarouselComponent>
 
     <section class="featured-section">
-      <h2 class="section-title">Produk Terbaru </h2>
       <div class="latest-products">
         <CardComponent v-for="item in latestProducts" :key="item.id" :item="item" />
       </div>
     </section>
 
     <section class="featured-section">
-      <h2 class="section-title">Grid View</h2>
+      <div class="section-title">
+        <p class="text-title">Product/<span>All</span></p>
+      </div>
       <div class="grid-view">
         <CardComponent v-for="item in dataProduct" :key="item.id" :item="item" />
       </div>
@@ -69,10 +70,12 @@ onMounted(async () => {
 });
 </script>
 <style scoped>
+
 .carousel {
+  margin-top: 2rem;
   position: relative;
   max-height: 100vh;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
 
   .slide-info {
@@ -92,10 +95,22 @@ onMounted(async () => {
 }
 
 .section-title {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 1.5rem;
+  width: 100%;
+  background-color: #333; /* Darker grey for better contrast */
+  padding: 10px; /* Add padding for better spacing */
+  text-align: left;
+  color: #fff; /* White text color for better visibility */
+  border-bottom: 2px solid #555; /* Add a subtle border for separation */
+
+  .text-title {
+    margin: 0; /* Remove default margin to avoid extra space */
+    font-size: 1.2rem; /* Slightly increase the font size for emphasis */
+    font-weight: bold; /* Make the text bold for better readability */
+  }
 }
+
+
+
 
 .featured-section {
   margin-top: 40px;
@@ -113,5 +128,4 @@ onMounted(async () => {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   justify-content: center;
-}
-</style>
+}</style>

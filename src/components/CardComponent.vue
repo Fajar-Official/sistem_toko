@@ -26,6 +26,7 @@ export default {
 }
 
 .card img {
+    margin-bottom: 8px;
     width: 100%;
     max-height: 150px;
     object-fit: cover;

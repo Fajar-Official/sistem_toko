@@ -5,6 +5,7 @@
   padding: 0 auto;
   font-weight: normal;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 a,

@@ -18,7 +18,9 @@
                 </div>
             </div>
             <div class="icons">
-                <img src="@/assets/logo.svg" alt="" width="5%" v-for="i in 3" :key="i" />
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user"></i>
             </div>
         </div>
     </nav>
@@ -92,6 +94,8 @@ nav .nav-inner {
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    margin-top: 8px;
+    /* Menambahkan margin atas pada dropdown */
 }
 
 .dropdown:hover .dropdown-content {
@@ -115,11 +119,10 @@ nav .nav-inner {
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
+    margin-right: 8px;
+    /* Menambahkan margin kanan pada icons */
 }
 
-.icons img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-</style>
+.icons i {
+    font-size: 24px;
+}</style>
