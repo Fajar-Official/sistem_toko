@@ -1,35 +1,49 @@
+
 <template>
     <footer class="footer">
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-        </div>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h3 class="widget-title">Contact Us</h3>
+                    <div class="content">
+                        <p class="address">Jl. Palagan km 10 Rejodani, Ngaglik Sleman Yogyakarta</p>
+                        <p class="phone"><i class="fa fa-phone"></i> 0877-3821-0660</p>
+                    </div>
+                </div>
 
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <router-link to="/">Home</router-link>
-            <router-link to="/">About</router-link>
-            <router-link to="/">Contact</router-link>
-        </div>
+                <div class="footer-section">
+                    <h3 class="widget-title">OUR SERVICES</h3>
+                    <div class="content">
+                        <ul>
+                            <li><a href="https://sistemtoko.com/how-to-order">CARA PEMBELIAN</a></li>
+                            <li><a href="https://sistemtoko.com/f-a-q">F.A.Q</a></li>
+                            <li><a href="https://sistemtoko.com/konfirmasi-pembayaran">KONFIRMASI PEMBAYARAN</a></li>
+                            <li><a href="https://sistemtoko.com/about-us">TENTANG </a></li>
+                            <li><a href="https://sistemtoko.com/term-condition">SYARAT & KETENTUAN</a></li>
+                            <li><a href="https://sistemtoko.com/pengembalian-dan-penukaran">PENGEMBALIAN DANPENUKARAN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://www.facebook.com/example" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/example" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
+                <div class="footer-section">
+                    <h3 class="widget-title">FOLLOW US</h3>
+                    <div class="content">
+                        <div class="social">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="footer-section">
-            <h3>Newsletter</h3>
-            <p>Subscribe to our newsletter for updates.</p>
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
-        </div>
-
-        <div class="footer-section">
-            <h3>Location</h3>
-            <p>123 Main Street, Cityville, Country</p>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class=""><span>supported by <a href="http://sistemtoko.com">sistemtoko</a></span>.
+                        Allright reserved</div>
+                </div>
+            </div>
         </div>
     </footer>
 </template>
@@ -47,23 +61,40 @@
     flex-wrap: wrap;
 }
 
-.footer-section {
-    margin-bottom: 20px;
+.footer-top {
+    display: flex;
 }
 
-.footer a {
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.widget-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.content {
+    line-height: 1.5;
+}
+
+a {
     color: #fff;
     text-decoration: none;
     margin-right: 10px;
 }
 
-.footer input {
+input {
     padding: 8px;
     width: 70%;
     margin-right: 10px;
 }
 
-.footer button {
+button {
     padding: 8px;
     background-color: #fff;
     color: #333;
