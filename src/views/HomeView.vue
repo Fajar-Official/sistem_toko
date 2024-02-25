@@ -12,13 +12,13 @@
 
     <section class="featured-section">
       <div class="latest-products">
-        <CardComponent v-for="item in latestProducts" :key="item.id" :item="item" />
+        <CardLatestComponent v-for="item in latestProducts" :key="item.id" :item="item" />
       </div>
     </section>
 
     <section class="featured-section">
       <div class="section-title">
-        <p class="text-title">Product/<span>All</span></p>
+        <p class="text-title"><a>Home</a>/<span>All</span></p>
       </div>
       <div class="grid-view">
         <CardComponent v-for="item in dataProduct" :key="item.id" :item="item" />
@@ -31,6 +31,7 @@
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
 import CardComponent from '@/components/CardComponent.vue';
+import CardLatestComponent from '@/components/CardLatestComponent.vue';
 import CarouselComponent from '@/components/CarouselComponent.vue';
 import SlideCarousel from '@/components/SlideCarousel.vue';
 import { apiUrl } from '@/api/apiUrl';
@@ -39,7 +40,6 @@ const latestProducts = ref([]);
 const dataProduct = ref([]);
 const carouselSlides = ['banner-1', 'banner-2', 'banner-3'];
 
-// Image paths are stored in a reactive variable
 const imagePaths = ref({});
 
 const getImagePath = async (slide) => {
@@ -96,36 +96,32 @@ onMounted(async () => {
 
 .section-title {
   width: 100%;
-  background-color: #333; /* Darker grey for better contrast */
-  padding: 10px; /* Add padding for better spacing */
+  background-color: #333; 
+  padding: 10px; 
   text-align: left;
-  color: #fff; /* White text color for better visibility */
-  border-bottom: 2px solid #555; /* Add a subtle border for separation */
+  color: #fff;
+  border-bottom: 2px solid #555;
 
   .text-title {
-    margin: 0; /* Remove default margin to avoid extra space */
-    font-size: 1.2rem; /* Slightly increase the font size for emphasis */
-    font-weight: bold; /* Make the text bold for better readability */
+    margin: 0;
+    font-size: 12px; 
   }
 }
-
-
-
 
 .featured-section {
   margin-top: 40px;
 }
 
-.latest-products,
-.grid-view {
+.latest-products{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.grid-view {
+ .grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   justify-content: center;
-}</style>
+}
+</style>

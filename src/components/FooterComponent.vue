@@ -4,15 +4,16 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-section">
-                    <h3 class="widget-title">Contact Us</h3>
+                    <p class="text-talk">Talk to Us Now!</p>
+                    <p class="title-content">Contact Us</p>
                     <div class="content">
                         <p class="address">Jl. Palagan km 10 Rejodani, Ngaglik Sleman Yogyakarta</p>
                         <p class="phone"><i class="fa fa-phone"></i> 0877-3821-0660</p>
                     </div>
                 </div>
-
                 <div class="footer-section">
-                    <h3 class="widget-title">OUR SERVICES</h3>
+                    <p class="text-talk">Talk to Us Now!</p>
+                    <p class="title-content">OUR SERVICES</p>
                     <div class="content">
                         <ul>
                             <li><a href="https://sistemtoko.com/how-to-order">CARA PEMBELIAN</a></li>
@@ -27,7 +28,8 @@
                 </div>
 
                 <div class="footer-section">
-                    <h3 class="widget-title">FOLLOW US</h3>
+                    <p class="text-talk">Talk to Us Now!</p>
+                    <p class="title-content">FOLLOW US</p>
                     <div class="content">
                         <div class="social">
                             <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
@@ -40,8 +42,10 @@
 
             <div class="footer-bottom">
                 <div class="container">
-                    <div class=""><span>supported by <a href="http://sistemtoko.com">sistemtoko</a></span>.
-                        Allright reserved</div>
+                    <div class="">
+                        <span>supported by <a href="http://sistemtoko.com">sistemtoko</a></span>.
+                        Allright reserved
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,10 +63,18 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 5rem;
 }
+.text-talk{
+    font-size: large;
+    color: #00BD7E;
+    font-family: 'Courier New', Courier, monospace;
 
+}
 .footer-top {
     display: flex;
+    justify-content: space-around;
+    flex-grow: 1; 
 }
 
 .footer-bottom {
@@ -73,9 +85,10 @@
     flex: 1;
 }
 
-.widget-title {
-    font-size: 1.5rem;
+.title-content {
+    font-size: medium;
     margin-bottom: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
 }
 
 .content {

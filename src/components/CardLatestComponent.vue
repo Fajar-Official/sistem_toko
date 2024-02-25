@@ -3,11 +3,6 @@
         <div class="card">
             <img :src="item.photo" alt="Product Image" />
         </div>
-        <div class="details">
-            <p>{{ item.name }}</p>
-            <p>{{ item.currency }} {{ item.price }}</p>
-            <button>ADD TO CART</button>
-        </div>
     </div>
 </template>
 
@@ -40,25 +35,5 @@ export default {
     max-height: 150px;
     object-fit: cover;
     border-radius: 8px;
-}
-
-.details {
-    margin-top: 8px;
-    text-align: center;
-}
-
- button {
-    margin-top: 8px;
-    padding: 8px 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
- button:hover {
-    background-color: #00BD7E;
 }
 </style>
